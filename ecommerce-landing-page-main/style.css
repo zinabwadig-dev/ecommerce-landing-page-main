@@ -1,0 +1,364 @@
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("./src/montreal/NeueMontreal-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("./src/montreal/NeueMontreal-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("./src/montreal/NeueMontreal-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("./src/montreal/NeueMontreal-Light.woff2") format("woff2");
+  font-weight: 300;
+}
+
+/* TODO (students): add the Light font (NeueMontreal-Light.woff2) with font-weight: 300 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Neue Montreal", sans-serif;
+}
+
+
+header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+  background-color: #fff;
+
+  position: fixed;
+  top: 0;
+
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 10;
+}
+
+.main-nav ul,
+.secondary-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-nav a:hover{
+  text-decoration: underline;
+  color: brown;
+  opacity: 1;
+}
+
+.secondary-nav ul {
+  justify-content: flex-end;
+}
+
+
+.main-nav a,
+.secondary-nav a {
+  color: #000;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+/* TODO (students): add a hover effect on the nav links (color, opacity, underline...) */
+.main-nav a:hover{
+  text-decoration: underline;
+  color: brown;
+  opacity: 1;
+}
+
+.secondary-nav a:hover{
+    text-decoration: underline;
+  color: brown;
+  opacity: 1;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* hero */
+#hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  height: 100dvh;
+}
+
+.content {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+}
+
+.content h1 {
+  font-size: 5rem;
+  font-weight: 300;
+  color: #000;
+  margin-bottom: 2rem;
+  line-height: 1;
+  letter-spacing: -0.025rem;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #1c1b1b;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  width: 90%;
+}
+
+.content button{
+  margin-top: 5rem;
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* TODO (students): add a :hover style for the "Shop Now" button */
+
+.content button:hover {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black ;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* shared section styles */
+section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* categories */
+#categories {
+  padding: 5rem 1rem;
+  transform: scale(1.05);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.category {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+#categories .category span {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.category img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.1s ease-in;
+}
+
+.category:hover img {
+    transform: scale(1.05);
+}
+
+/* TODO (students):
+   - place the <span> on top of the image (bottom-left corner) using position: absolute
+   - make the text white, uppercase, and bigger
+   - BONUS: zoom the image a little on hover (transform: scale(...) + transition) */
+
+/* products */
+#products {
+  padding: 5rem 1rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-header a{
+    color: black;
+    font-size: small;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+/* TODO (students): style the "View all" link in .section-header (color, size, uppercase, underline) */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 1rem;
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+/* TODO (students): style the product name (h3) and the .price
+   - small font size, h3 weight 500, price in grey */
+  .product-card h3{
+  font-size: small;
+  font-weight: 500;
+}
+
+.product-card .price {
+  font-size: small;
+  color: grey;
+}
+/* newsletter */
+/* TODO (students): this section has NO CSS — style it completely yourself!
+   Ideas: centered text, light grey background, big padding,
+   input + button on the same line, black button like "Shop Now". */
+
+#newsletter{
+  background: lightgrey;
+  padding: 60px;
+  text-align: center;
+}
+#newsletter form{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#newsletter form input{
+  border: 2px solid black;
+  padding: 7px;
+}
+
+button{
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: #fff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+#newsletter form button:hover {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid black ;
+}
+/* footer */
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 3rem 1rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* TODO (students):
+   - style the footer titles (h4) and links (color, size, spacing between <li>)
+   - make .copyright take the full width of the grid (grid-column: 1 / -1) */
+  footer h4{
+  font-size: small;
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+footer ul li a{
+  font-size: small;
+  color: grey;
+  line-height: 2;
+}
+footer h4{
+  font-size: small;
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+footer .copyright{
+  display: grid;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+/* TODO (students) — BONUS: make the page responsive with @media queries
+   (e.g. under 768px: hero in 1 column, products in 2 columns, categories in 1 column) */
+  @media (max-width: 768px) {
+    /* Hero */
+    #hero {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .image {
+        height: 400px;
+    }
+
+    /* Categories */
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Products */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    footer {
+        grid-template-columns: 1fr;
+    }
+}
